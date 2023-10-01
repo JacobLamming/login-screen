@@ -65,16 +65,40 @@ button {
     justify-content: center;
     cursor: pointer;
     border-radius: 5px;
+    transition: all 0.5s;
 }
 
-button:hover {
 
-    background-color: #00000056;
-    color: white;
-
-}
 
 button:active {
 
     background-color: darkgrey;
+}
+
+button span {
+
+    display: inline-block;
+    position: relative;
+
+}
+
+button span:after {
+
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+button:hover span {
+
+    padding-right: 14px;
+}
+
+button:hover span:after {
+
+    opacity: 1;
+    right: 0;
 }
